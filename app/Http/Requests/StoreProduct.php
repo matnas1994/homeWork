@@ -24,8 +24,8 @@ class StoreProduct extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'code' => 'required|min:5',
+            'name' => 'required|string|max:191',
+            'code' => 'required|min:5|max:191',
             'warehouses' => 'required|array',
             'warehouses.*.id' => 'required|exists:warehouses',
             'warehouses.*.stock_level' => 'required|numeric|min:1'

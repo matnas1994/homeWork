@@ -24,8 +24,8 @@ class UpdateProduct extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string',
-            'code' => 'min:5',
+            'name' => 'string|max:191',
+            'code' => 'min:5|max:191',
             'warehouses' => 'array',
             'warehouses.*.id' => 'required|exists:warehouses',
             'warehouses.*.stock_level' => 'required|numeric|min:0'
